@@ -1,2 +1,4 @@
-*.rds
-*.json
+.Rproj.user/
+.Rhistory
+.RData
+.Ruserdata
