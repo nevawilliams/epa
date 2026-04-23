@@ -4,7 +4,7 @@
 
 ## Overview
 XGBoost multiclass Expected Points model trained on competitive NFL situations (WP 5-95%, 2014-2023).
-Primary innovation: a rolling defensive success rate feature (`def_sr`) that adjusts expected points
+Primary innovation: a defensive success rate feature (`def_sr`) that adjusts expected points
 for opponent quality in real time using only raw play outcomes — no external EPA model involved.
 The feature updates weekly with strict lag to prevent data leakage.
 
@@ -21,7 +21,7 @@ Evaluated on identical plays, same labels, direct apples-to-apples comparison.
 - **Competitive play filter:** WP 5-95% removes garbage time from both training and evaluation
 - **Chronological split:** train 2014-2023, val 2024, test 2025 — simulates real deployment
 - **Label construction:** next scoring event this half from possession team perspective, sign determined by scoring team identity
-- **def_sr:** rolling defensive success rate with strict lag — no data leakage
+- **def_sr:** defensive success rate with a lag — no data leakage
 
 ## Features
 | Feature | Description | In nflfastR EP? |
@@ -29,7 +29,7 @@ Evaluated on identical plays, same labels, direct apples-to-apples comparison.
 | half_seconds_remaining | Time remaining in half | Yes |
 | yardline_100 | Field position | Yes |
 | score_differential | Score margin | No |
-| def_sr | Rolling defensive success rate allowed | No |
+| def_sr | Defensive success rate allowed | No |
 | down1-4 | Down indicators | Yes |
 | ydstogo | Yards to first down | Yes |
 | posteam/defteam_timeouts | Timeouts remaining | Yes |
