@@ -147,6 +147,7 @@ pbp_competitive |>
   ) |>
   print(width = 200)
 
+
 cat("\nRank changes vs standard EPA:\n")
 pbp_competitive |>
   dplyr::filter(!is.na(epa_new)) |>
